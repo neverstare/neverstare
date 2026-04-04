@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120" width="900" height="120">
+  <defs>
+    <style>
+      @keyframes fadeText {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+      }
+      @keyframes drift {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(5px); }
+        100% { transform: translateX(0); }
+      }
+      @keyframes eyeWatch {
+        0%, 40%, 60%, 100% { transform: translateX(0); }
+        45%, 55% { transform: translateX(2px); }
+      }
+      .footer-bg { fill: #050505; }
+      .footer-text {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #330000;
+        animation: fadeText 5s ease-in-out infinite;
+      }
+      .footer-main {
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        fill: #4a0000;
+        letter-spacing: 8px;
+      }
+      .footer-eye {
+        fill: #8b0000;
+        animation: eyeWatch 4s ease-in-out infinite;
+      }
+      .footer-line {
+        stroke: #1a0000;
+        stroke-width: 0.5;
+      }
+    </style>
+    <linearGradient id="footerFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#050505"/>
+    </linearGradient>
+  </defs>
+  <rect class="footer-bg" width="900" height="120" fill="url(#footerFade)"/>
+  <line class="footer-line" x1="100" y1="15" x2="800" y2="15"/>
+
+  <text class="footer-text" x="450" y="45" text-anchor="middle">⚠ FOR EDUCATIONAL &amp; DEFENSIVE RESEARCH ONLY ⚠</text>
+  <text class="footer-main" x="450" y="72" text-anchor="middle">I  WAS  NEVER  HERE</text>
+
+  <g transform="translate(450, 97)">
+    <ellipse cx="0" cy="0" rx="12" ry="6" fill="none" stroke="#4a0000" stroke-width="1"/>
+    <circle class="footer-eye" cx="0" cy="0" r="3"/>
+    <circle cx="0" cy="0" r="1" fill="#ff0000"/>
+  </g>
+
+  <text class="footer-text" x="450" y="115" text-anchor="middle" style="font-size: 9px; animation-delay: 1s;">connection terminated • trace erased • signal lost</text>
+</svg>

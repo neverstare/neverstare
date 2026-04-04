@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320">
+  <defs>
+    <style>
+      @keyframes flicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+        20%, 24%, 55% { opacity: 0.4; }
+      }
+      @keyframes glitch1 {
+        0% { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 0); }
+        20% { clip-path: inset(92% 0 1% 0); transform: translate(1px, 0); }
+        40% { clip-path: inset(43% 0 1% 0); transform: translate(-1px, 0); }
+        60% { clip-path: inset(25% 0 58% 0); transform: translate(2px, 0); }
+        80% { clip-path: inset(54% 0 7% 0); transform: translate(-2px, 0); }
+        100% { clip-path: inset(58% 0 43% 0); transform: translate(0); }
+      }
+      @keyframes glitch2 {
+        0% { clip-path: inset(65% 0 13% 0); transform: translate(2px, 0); }
+        20% { clip-path: inset(15% 0 72% 0); transform: translate(-1px, 0); }
+        40% { clip-path: inset(85% 0 3% 0); transform: translate(1px, 0); }
+        60% { clip-path: inset(37% 0 48% 0); transform: translate(-2px, 0); }
+        80% { clip-path: inset(3% 0 82% 0); transform: translate(2px, 0); }
+        100% { clip-path: inset(72% 0 15% 0); transform: translate(0); }
+      }
+      @keyframes scanline {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(400%); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+      }
+      @keyframes matrixDrop {
+        0% { transform: translateY(-100%); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(400%); opacity: 0; }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes eyeGlow {
+        0%, 100% { filter: drop-shadow(0 0 3px #ff0000) drop-shadow(0 0 8px #8b0000); }
+        50% { filter: drop-shadow(0 0 8px #ff0000) drop-shadow(0 0 20px #8b0000) drop-shadow(0 0 40px #330000); }
+      }
+      @keyframes borderPulse {
+        0%, 100% { stroke-opacity: 0.2; }
+        50% { stroke-opacity: 0.6; }
+      }
+      .bg { fill: #050505; }
+      .main-text {
+        font-family: 'Courier New', monospace;
+        font-size: 72px;
+        font-weight: bold;
+        fill: #8b0000;
+        animation: flicker 3s infinite;
+        filter: drop-shadow(0 0 10px #8b0000) drop-shadow(0 0 30px #330000);
+      }
+      .glitch-1 {
+        font-family: 'Courier New', monospace;
+        font-size: 72px;
+        font-weight: bold;
+        fill: #ff0040;
+        animation: glitch1 2.5s infinite linear;
+        opacity: 0.6;
+      }
+      .glitch-2 {
+        font-family: 'Courier New', monospace;
+        font-size: 72px;
+        font-weight: bold;
+        fill: #00ffff;
+        animation: glitch2 3s infinite linear;
+        opacity: 0.3;
+      }
+      .subtitle {
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        fill: #cc0000;
+        letter-spacing: 4px;
+        animation: fadeIn 2s ease-out;
+        opacity: 0.9;
+      }
+      .scanline {
+        fill: rgba(255, 0, 0, 0.03);
+        animation: scanline 4s linear infinite;
+      }
+      .matrix-char {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #1a0000;
+        opacity: 0.4;
+      }
+      .matrix-char-bright {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #4a0000;
+        opacity: 0.6;
+      }
+      .eye {
+        animation: eyeGlow 3s ease-in-out infinite;
+      }
+      .border-line {
+        fill: none;
+        stroke: #8b0000;
+        stroke-width: 1;
+        animation: borderPulse 4s ease-in-out infinite;
+      }
+      .corner {
+        fill: none;
+        stroke: #cc0000;
+        stroke-width: 2;
+        opacity: 0.6;
+      }
+      .status-dot {
+        fill: #8b0000;
+        animation: blink 2s ease-in-out infinite;
+      }
+      .status-text {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #4a0000;
+      }
+      .bio-text {
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        fill: #660000;
+        opacity: 0.8;
+      }
+      .hash-text {
+        font-family: 'Courier New', monospace;
+        font-size: 9px;
+        fill: #1a0000;
+        opacity: 0.3;
+      }
+      @media (prefers-color-scheme: light) {
+        .bg { fill: #0a0a0a; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="900" height="320" rx="0"/>
+
+  <!-- Matrix rain characters (background decoration) -->
+  <text class="matrix-char" x="45" y="30" style="animation: matrixDrop 8s linear infinite; animation-delay: 0s;">ネ</text>
+  <text class="matrix-char" x="120" y="50" style="animation: matrixDrop 6s linear infinite; animation-delay: 1s;">バ</text>
+  <text class="matrix-char" x="200" y="20" style="animation: matrixDrop 7s linear infinite; animation-delay: 0.5s;">ー</text>
+  <text class="matrix-char" x="310" y="40" style="animation: matrixDrop 9s linear infinite; animation-delay: 2s;">ス</text>
+  <text class="matrix-char" x="480" y="35" style="animation: matrixDrop 5s linear infinite; animation-delay: 1.5s;">テ</text>
+  <text class="matrix-char" x="580" y="25" style="animation: matrixDrop 8s linear infinite; animation-delay: 0.8s;">ア</text>
+  <text class="matrix-char" x="700" y="45" style="animation: matrixDrop 6s linear infinite; animation-delay: 3s;">0</text>
+  <text class="matrix-char" x="780" y="30" style="animation: matrixDrop 7s linear infinite; animation-delay: 2.5s;">1</text>
+  <text class="matrix-char" x="850" y="55" style="animation: matrixDrop 5s linear infinite; animation-delay: 1.2s;">ル</text>
+  <text class="matrix-char-bright" x="150" y="60" style="animation: matrixDrop 10s linear infinite; animation-delay: 4s;">死</text>
+  <text class="matrix-char" x="380" y="55" style="animation: matrixDrop 7s linear infinite; animation-delay: 3.5s;">影</text>
+  <text class="matrix-char" x="650" y="60" style="animation: matrixDrop 6s linear infinite; animation-delay: 0.3s;">闇</text>
+
+  <!-- Corner brackets -->
+  <polyline class="corner" points="5,30 5,5 30,5"/>
+  <polyline class="corner" points="870,5 895,5 895,30"/>
+  <polyline class="corner" points="895,290 895,315 870,315"/>
+  <polyline class="corner" points="30,315 5,315 5,290"/>
+
+  <!-- Border lines -->
+  <rect class="border-line" x="3" y="3" width="894" height="314" rx="0"/>
+
+  <!-- Scanline effect -->
+  <rect class="scanline" x="0" y="0" width="900" height="2"/>
+
+  <!-- Eye symbol -->
+  <g class="eye" transform="translate(450, 90)">
+    <ellipse cx="0" cy="0" rx="28" ry="14" fill="none" stroke="#8b0000" stroke-width="2"/>
+    <circle cx="0" cy="0" r="6" fill="#ff0000"/>
+    <circle cx="0" cy="0" r="2" fill="#ffffff"/>
+    <line x1="-40" y1="0" x2="-30" y2="0" stroke="#4a0000" stroke-width="1"/>
+    <line x1="30" y1="0" x2="40" y2="0" stroke="#4a0000" stroke-width="1"/>
+    <line x1="0" y1="-24" x2="0" y2="-18" stroke="#4a0000" stroke-width="1"/>
+    <line x1="0" y1="14" x2="0" y2="24" stroke="#4a0000" stroke-width="1"/>
+  </g>
+
+  <!-- Main glitching text -->
+  <text class="glitch-2" x="50%" y="170" text-anchor="middle">NEVERSTARE</text>
+  <text class="glitch-1" x="50%" y="170" text-anchor="middle">NEVERSTARE</text>
+  <text class="main-text" x="50%" y="170" text-anchor="middle">NEVERSTARE</text>
+
+  <!-- Subtitle -->
+  <text class="subtitle" x="50%" y="205" text-anchor="middle">◉ RE/MAL DEV  ◈  SHELL ARCHITECT  ◈  GHOST OPERATOR ◉</text>
+
+  <!-- Bio quote -->
+  <text class="bio-text" x="50%" y="240" text-anchor="middle">" True security is an illusion until I'm online "</text>
+
+  <!-- Status indicators -->
+  <g transform="translate(200, 275)">
+    <circle class="status-dot" cx="0" cy="0" r="3"/>
+    <text class="status-text" x="10" y="4">REVERSING: ACTIVE</text>
+  </g>
+  <g transform="translate(400, 275)">
+    <circle class="status-dot" cx="0" cy="0" r="3" style="animation-delay: 0.5s;"/>
+    <text class="status-text" x="10" y="4">MAL DEV: LOADED</text>
+  </g>
+  <g transform="translate(590, 275)">
+    <circle class="status-dot" cx="0" cy="0" r="3" style="animation-delay: 1s;"/>
+    <text class="status-text" x="10" y="4">SIGNAL: ENCRYPTED</text>
+  </g>
+
+  <!-- Hash decorations -->
+  <text class="hash-text" x="15" y="310">SHA-256: e3b0c44298fc1c149afbf4c8996fb9...</text>
+  <text class="hash-text" x="680" y="310">PID: 31337 | UID: 0</text>
+
+  <!-- Horizontal line accents -->
+  <line x1="50" y1="220" x2="350" y2="220" stroke="#1a0000" stroke-width="0.5"/>
+  <line x1="550" y1="220" x2="850" y2="220" stroke="#1a0000" stroke-width="0.5"/>
+</svg>
